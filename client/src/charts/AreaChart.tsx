@@ -3,6 +3,7 @@ import { getEarningRevenue } from "../slices/earningRevSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useEffect } from "react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const options = {
     title: "Vendor Performance",
     curveType: "function",
@@ -11,7 +12,7 @@ export const options = {
 
 export default function AreaChart() {
     const dispatch = useAppDispatch();
-    const { earningRevenue, isLoading } = useAppSelector((state) => state.earningRev)
+    const { earningRevenue } = useAppSelector((state) => state.earningRev)
 
     console.log('aracChart', earningRevenue)
     useEffect(() => {

@@ -13,7 +13,7 @@ const PopularResCard = () => {
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { popularRestaurant, isLoading } = useAppSelector(
+  const { popularRestaurant } = useAppSelector(
     (state) => state.popularRestaurant
   );
   useEffect(() => {

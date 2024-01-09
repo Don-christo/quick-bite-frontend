@@ -5,7 +5,7 @@ import { getPopularFoods } from '../slices/vendorPopularFoodsSlice';
 
 export default function PieChart() {
     const dispatch = useAppDispatch();
-    const { vendorPopularFoods, isLoading } = useAppSelector((state) => state.vendorPopularFood)
+    const { vendorPopularFoods } = useAppSelector((state) => state.vendorPopularFood)
     useEffect(() => {
         dispatch(getPopularFoods())
     }, [dispatch])

@@ -11,7 +11,7 @@ const PopularFoodsCard = () => {
 
   const dispatch = useAppDispatch();
 
-  const { popularFood, isLoading } = useAppSelector(
+  const { popularFood } = useAppSelector(
     (state) => state.popularFood
   );
   useEffect(() => {

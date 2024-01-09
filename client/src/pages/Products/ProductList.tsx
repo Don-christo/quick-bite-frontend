@@ -29,6 +29,7 @@ interface Column {
     label: string;
     minWidth?: number;
     align?: "right" | "left" | "center";
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     format?: any//((value: number) => string) | undefined
 }
 
@@ -38,6 +39,7 @@ interface Data {
     order_count: number;
     ready_time: string;
     rating: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     actions: any;
     foodId: string;
 }
@@ -63,7 +65,7 @@ function createData(
 
 export default function ProductList() {
     const dispatch = useAppDispatch();
-    const { allFoodCount, isLoading } = useAppSelector(
+    const { allFoodCount } = useAppSelector(
         (state) => state.allFoodCount
     );
     // console.log(isLoading)
@@ -97,7 +99,8 @@ export default function ProductList() {
     };
 
     const [showEditModal, setShowEditModal] = useState(false);
-    const [selectedRow, setSelectedRow] = useState<Data | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_, setSelectedRow] = useState<Data | null>(null);
 
     const handleEditClick = (row: Data) => {
         setSelectedRow(row);
@@ -118,6 +121,7 @@ export default function ProductList() {
 
                 dispatch(getAllFoodCount());
                 
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               } catch (error:any) {
                 if (error.response) {
                   return toast.error(error.response.data.message);

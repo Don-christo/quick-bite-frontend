@@ -2,7 +2,6 @@
 import { useState, ChangeEvent } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Input from "./reusableComponents/input";
-import Header from "./Header";
 import axios from "../api/httpService";
 import { showSuccessToast, showErrorToast } from "../utility/toast";
 
@@ -18,7 +17,7 @@ const initialData = {
 const VendorSignupForm = () => {
   const [vendor, setVendor] = useState(initialData);
   const [loading, setLoading] = useState(false);
-  const [signupSuccess, setSignupSuccess] = useState(false);
+  const [_,setSignupSuccess] = useState(false);
   // const [passwordValidation, setPasswordValidation] = useState(false);
   const navigate = useNavigate();
 

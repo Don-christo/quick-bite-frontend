@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from "react";
 import "./OtpVerification.css";
-import {toast, ToastContainer} from "react-toastify"
+import {toast} from "react-toastify"
 import "react-toastify/ReactToastify.css"
 import { useNavigate } from "react-router-dom";
 import axios from  "../../api/httpService";
@@ -13,7 +13,7 @@ const OtpVerification = () => {
 
   const email = localStorage.getItem("email")
   const [resendTimer, setResendTimer] = useState(30); // Countdown timer for RESEND link
-  const [otpVerified, setOtpVerified] = useState(false); // Flag to track OTP verification status
+  const [otpVerified] = useState(false); // Flag to track OTP verification status
  const navigate = useNavigate()
   useEffect(() => {
     const codes: NodeListOf<Element> = document.querySelectorAll(

@@ -97,7 +97,8 @@ export const getPopularFood = createAsyncThunk(
   }
 );
 
-export const authSlice = createSlice({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const authSlice: any = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -140,7 +141,7 @@ export const authSlice = createSlice({
     });
     builder.addCase(updateUserProfile.fulfilled, (state, action) => {
       // Add user to the state array
-      const newUser = action.payload.data;
+      // const newUser = action.payload.data;
       state.user = action.payload.data;
       toast(action.payload.message);
    

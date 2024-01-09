@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/cardSection.css";
-import food1 from "../assets/food1.jpeg";
 import { FaEdit } from "react-icons/fa";
 import { BsPlusSquare } from "react-icons/bs";
 import { useCart } from "react-use-cart";
@@ -8,6 +7,7 @@ import { useCart } from "react-use-cart";
 interface Props {
   name?: string;
   description?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   item: any;
   price?: number;
   food_image?: string;

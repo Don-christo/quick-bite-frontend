@@ -85,7 +85,8 @@ export const updateVendorProfile = createAsyncThunk(
 	}
 );
 
-export const vendorAuthSlice = createSlice({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const vendorAuthSlice: any = createSlice({
 	name: "vendorAuth",
 	initialState,
 	reducers: {

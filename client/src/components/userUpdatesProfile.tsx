@@ -21,7 +21,7 @@ const UserUpdatesProfile = () => {
 
   const dispatch = useAppDispatch();
 
-  const { user: logedInUser } = useAppSelector((state) => state.auth);
+  const { user: logedInUser }: any = useAppSelector((state) => state.auth);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();

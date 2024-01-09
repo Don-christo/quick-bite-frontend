@@ -1,4 +1,3 @@
-import { Chart } from "react-google-charts";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getGeoProfile } from '../slices/geoProfileSlice';
 import { useEffect } from 'react';
@@ -6,13 +5,14 @@ import { useEffect } from 'react';
 export default function GeoChart() {
     const dispatch = useAppDispatch();
 
-    const { vendorProfile, isLoading } = useAppSelector((state) => state.geoProfile);
+    const { vendorProfile } = useAppSelector((state) => state.geoProfile);
 
     useEffect(() => {
         dispatch(getGeoProfile());
     }, [dispatch]);
 
     // console.log('vendor', vendorProfile)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const vendorInfoAvailable:any = vendorProfile?.map((a)=>a.cover_image);
     return (
         // <Chart

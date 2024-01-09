@@ -9,7 +9,7 @@ const ITEMS_PER_PAGE = 12;
 
 const NewFoodsCard = () => {
   const dispatch = useAppDispatch();
-  const { newFood, isLoading } = useAppSelector((state) => state.newFood);
+  const { newFood } = useAppSelector((state) => state.newFood);
 
   const [currentPage, setCurrentPage] = useState(1);
 

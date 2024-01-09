@@ -6,8 +6,6 @@ import styles from "../styles/paystack.module.css"
 import { FaTimes } from "react-icons/fa"
 import "../styles/index.css"
 import { useCart } from "react-use-cart"
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { userCreateOrder } from "../slices/userCreateOrderSlice"
 // interface Close{
 //   closeModal : boolean
 // }

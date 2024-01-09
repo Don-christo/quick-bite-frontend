@@ -13,7 +13,7 @@ export default function MediaCard() {
     const [showModal , setShowModal] =  useState(false)
     const dispatch = useAppDispatch();
 
-    const { vendorProfile, isLoading } = useAppSelector((state) => state.vendorProfile);
+    const { vendorProfile } = useAppSelector((state) => state.vendorProfile);
 
     useEffect(() => {
         dispatch(getVendorProfile());

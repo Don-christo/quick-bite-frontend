@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getPopularFood } from '../slices/popularSlice';
 import spinner from  "../assets/spinner.gif"
-import Image from "../assets/white-rice.jpg";
 
 const PopularFood = () => {
    const [show, setShow] = useState(false);

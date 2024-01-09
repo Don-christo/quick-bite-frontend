@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/editFood.css'; // Import your CSS file for styling
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useAppDispatch } from '../store/hooks';
 import { editVendorFood } from '../slices/vendorFoods';
 import { getAllFoodCount } from '../slices/getAllFoodCountSlice';
 
@@ -19,7 +19,7 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
 
   const dispatch = useAppDispatch()
-  const {vendorFood} = useAppSelector((state) => state.vendorFood )
+  // const {vendorFood} = useAppSelector((state) => state.vendorFood )
 
 
 
@@ -43,7 +43,7 @@ const EditModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         };
         try {
          await dispatch(editVendorFood(payload))
-         dispatch(getAllFoodCount());;
+         dispatch(getAllFoodCount());
         } catch (error) {
           console.log(error)
         }

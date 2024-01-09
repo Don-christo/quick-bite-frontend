@@ -14,7 +14,7 @@ const Cardlist = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { allRestaurant, isLoading } = useAppSelector(
+  const { allRestaurant } = useAppSelector(
     (state) => state.allRestaurant
   );
   useEffect(() => {

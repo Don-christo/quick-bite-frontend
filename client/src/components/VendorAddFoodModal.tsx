@@ -1,6 +1,5 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
 // import * as React from "react";
 import TextField from "./InputAdornment";
 import Input from "./reusableComponents/input";
@@ -29,7 +28,6 @@ const VendorAddFoodModal = ({handleClose}:any) => {
 
     const [createFood, setCreateFood] = useState(initialData);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate()
   // const [createFoodSuccess, setCreateFoodSuccess] = useState(false);
   const [loading, setLoading] = useState(false)
 

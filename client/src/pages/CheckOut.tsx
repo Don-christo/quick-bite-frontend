@@ -3,12 +3,11 @@ import { useState, ChangeEvent } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Style.css";
 // import { Navbar } from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
 import { useCart } from "react-use-cart";
 import PaystackIntegration from "../components/PaystackIntegration";
 import Header from "../components/Header";
 import {userCreateOrder} from '../slices/userCreateOrderSlice';
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch } from "../store/hooks";
 
 const initialData = {
   address: "",
@@ -18,11 +17,9 @@ const initialData = {
 };
 
 const CheckOut = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState(initialData);
-  const { cartTotal, items, emptyCart } = useCart();
+  const { cartTotal, items } = useCart();
   const [show, setShow] = useState(false);
-  const {order} = useAppSelector((state)=> state.order)
   const dispatch = useAppDispatch()
 
 
@@ -41,6 +38,7 @@ const CheckOut = () => {
   const handleContinueToPayment = async (event: any) => {
     event.preventDefault();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const payload:any = {
       ...formData,
       items,

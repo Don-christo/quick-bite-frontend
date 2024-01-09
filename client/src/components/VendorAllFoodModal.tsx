@@ -17,9 +17,15 @@ interface Order {
   address: string;
 }
 
-const OrdersModal = () => {
+interface OrdersModalProps {
+  onClose: () => void;
+  isOpen: boolean;
+}
+
+
+const OrdersModal:  React.FC<OrdersModalProps> = () => {
   const dispatch = useAppDispatch();
-  const { singleOrder, isLoading } = useAppSelector(
+  const { singleOrder } = useAppSelector(
     (state) => state.getSingleOrder
   );
 
